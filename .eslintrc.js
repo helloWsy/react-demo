@@ -70,7 +70,7 @@ module.exports = {
     'no-lonely-if': 2, // 禁止else语句内只有if语句
     'no-loop-func': 1, // 禁止在循环中使用函数（如果没有引用外部变量不形成闭包就可以）
     'no-mixed-requires': [0, false], // 声明时不能混用声明类型
-    'no-mixed-spaces-and-tabs': [0, false], // 禁止混用tab和空格
+    'no-mixed-spaces-and-tabs': [1, true], // 禁止混用tab和空格
     'linebreak-style': [0, 'windows'], // 换行风格
     'no-multi-spaces': 1, // 不能用多余的空格
     'no-multi-str': 2, // 字符串不能用\换行
@@ -159,7 +159,7 @@ module.exports = {
     'guard-for-in': 0, // for in循环要用if语句过滤
     'handle-callback-err': 0, // nodejs 处理错误
     'id-length': 0, // 变量名长度
-    'indent': [2, 2, { // 缩进风格
+    'indent': [1, 2, { // 缩进风格
       'SwitchCase': 1
     }],
     'init-declarations': 0, // 声明时必须赋初值
@@ -214,7 +214,7 @@ module.exports = {
     'react/jsx-boolean-value': 2, //在JSX中强制布尔属性符号
     'react/jsx-closing-bracket-location': 1, //在JSX中验证右括号位置
     'react/jsx-curly-spacing': [2, { 'when': 'never', 'children': true }], //在JSX属性和表达式中加强或禁止大括号内的空格。
-    'react/jsx-indent-props': [2, 4], //验证JSX中的props缩进
+    'react/jsx-indent-props': [0, 1], //验证JSX中的props缩进
     'react/jsx-key': 2, //在数组或迭代器中验证JSX具有key属性
     'react/jsx-max-props-per-line': [0, { 'maximum': 1 }], // 限制JSX中单行上的props的最大数量
     'react/jsx-no-bind': 0, //JSX中不允许使用箭头函数和bind
@@ -229,7 +229,7 @@ module.exports = {
     'react/no-did-mount-set-state': 0, //防止在componentDidMount中使用setState
     'react/no-did-update-set-state': 1, //防止在componentDidUpdate中使用setState
     'react/no-direct-mutation-state': 2, //防止this.state的直接变异
-    'react/no-multi-comp': 2, //防止每个文件有多个组件定义
+    'react/no-multi-comp': 0, //防止每个文件有多个组件定义
     'react/no-set-state': 0, //防止使用setState
     'react/no-unknown-property': 2, //防止使用未知的DOM属性
     'react/prefer-es6-class': 2, //为React组件强制执行ES5或ES6类

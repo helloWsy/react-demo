@@ -1,31 +1,80 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom'
-// import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { loginIn, loginOut } from '../../redux/acitons/login'
+import { loginIn } from '../../redux/acitons/login'
+import { Form, Input, Button, Checkbox } from 'antd'
+import { Redirect } from 'react-router-dom'
 class Login extends Component {
 
-	login = () => {
-	  if (this.username.value && this.password.value) {
-	    this.props.loginIn(this.username.value, this.password.value)
-	  } else {
-	    alert('请输入账号密码')
-	  }
+  // login = () => {
+  //   if (this.username.value && this.password.value) {
+  //     this.props.loginIn(this.username.value, this.password.value)
+  //   } else {
+  //     alert('请输入账号密码')
+  //   }
+  // }
+	
+	onFinish = values => {
+	  this.props.loginIn(values.username, values.password)
 	}
+	
+	onFinishFailed = (errorInfo) => {
+	//   console.log('Failed:', errorInfo)
+	};
 
 	render() {
-	  const { userInfo } = this.props
-	  if (!userInfo) {
+	  const { token } = this.props
+	  console.log(token)
+	  if (!token) {
 	    return (
-	      <div>
-			账号<input defaultValue={'test'} placeholder="请输入账号" ref={c => this.username = c} type="text" />
-			密码<input defaultValue={'91b70cc9632ac5ac7b3fe2a63373aa65'} placeholder="请输入密码" ref={c => this.password = c} type="password" />
-	        <button onClick={this.login}>登录</button>
-	      </div>
+	    //   <div>
+	    // 	账号<input defaultValue={'test'} placeholder="请输入账号" ref={c => this.username = c} type="text" />
+	    // 	密码<input defaultValue={'91b70cc9632ac5ac7b3fe2a63373aa65'} placeholder="请输入密码" ref={c => this.password = c} type="password" />
+	    //     <button onClick={this.login}>登录</button>
+	    //   </div>
+	      <Form
+	        autoComplete="off"
+	        className="login-form"
+	        initialValues={{ remember: true }}
+	        labelCol={{ span: 8 }}
+	        name="basic"
+	        onFinish={this.onFinish}
+	        onFinishFailed={this.onFinishFailed}
+	        wrapperCol={{ span: 16 }}
+	      >
+	        <Form.Item
+	          initialValue={'test'}
+	          label="Username"
+	          name="username"
+	          rules={[{ required: true, message: 'Please input your username!' }]}
+	        >
+				
+		  		<Input />
+	        </Form.Item>
+				
+	        <Form.Item
+	          initialValue={'91b70cc9632ac5ac7b3fe2a63373aa65'}
+	          label="Password"
+	          name="password"
+	          rules={[{ required: true, message: 'Please input your password!' }]}
+	        >
+		  		<Input.Password />
+	        </Form.Item>
+				
+	        <Form.Item
+	          name="remember"
+	          valuePropName="checked"
+	          wrapperCol={{ offset: 8, span: 16 }}
+	        >
+		  		<Checkbox>Remember me</Checkbox>
+	        </Form.Item>
+	        
+	        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+		  		<Button htmlType="submit" type="primary">Submit</Button>
+	        </Form.Item>
+	      </Form>
 	    )
 	  } 
-	  // return <Redirect  to="home" />
-
+	  return <Redirect to="home" />
 	}
 }
 // const mapStateToProps = (state) => ({
@@ -38,11 +87,10 @@ class Login extends Component {
 
 export default connect(
   state => ({
-    userInfo: state.userInfo
+    token: state.token
   }),
   {
-    loginIn,
-    loginOut
+    loginIn
   }
 )(Login)
 // export default connect(mapStateToProps,mapDispatchToProps)(Login)

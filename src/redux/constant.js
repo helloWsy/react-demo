@@ -5,3 +5,4 @@
 export const LOGININ = 'loginIn'
 export const LOGINOUT = 'loginOut'
 export const LOGININFO = 'loginInfo'
+export const TOKEN = 'token'

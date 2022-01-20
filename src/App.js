@@ -1,27 +1,15 @@
-// import logo from './logo.svg';
-import './App.css'
-import Loign from './pages/login'
+import 'antd/dist/antd.min.css'
+import './styles/index.scss'
+import RouterMap from './router'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
-function App() {
+export default () => {
   return (
-    <Loign/>
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
+    <div className="App">
+      <Provider store={store}>
+        <RouterMap />
+      </Provider>
+    </div>
   )
 }
-
-export default App

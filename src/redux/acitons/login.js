@@ -1,29 +1,22 @@
-import { LOGININ, LOGINOUT } from '../constant'
+import { LOGININ, LOGINOUT, TOKEN } from '../constant'
 import { login } from '../../api/user'
+import { Redirect } from 'react-router-dom'
+
 // export const userInfo = data => ({ type: USERINFO, data })
 export const loginIn = (username, password) => {
-  console.log(username, password)
   return dispatch => {
     login({ username, password }).then(res => {
-      console.log(res)
-      // return {
-      // 	type: LOGININ,
-      // 	data:res
-      // }
-
-      const { token } = res
-
-      dispatch(res => {
-        return { type: LOGININ, res }
-      })
-      dispatch(res)
+      if (res.code === 200) {
+        dispatch({ type: LOGININ, data: res.data.principal })
+        dispatch({ type: TOKEN, data: res.data.token })
+        // <Redirect to="/home" />
+      }
     })
   }
-
-  // localStorage.removeItem('')
-  // localStorage.setItem('username', account)
-
-  // return {}
 }
 
-export const loginOut = data => ({ type: LOGINOUT, data })
+export const loginOut = () => {
+  return dispatch => {
+    dispatch({ type: LOGINOUT, data: null })
+  }
+}
