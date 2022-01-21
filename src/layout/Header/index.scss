@@ -1,0 +1,18 @@
+.header {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background-color: pink;
+	height: 40px;
+	a {
+		width: 100px;
+		text-align: center;
+		background-color: yellow;
+	}
+	.user {
+		position: absolute;
+		right: 10px;
+		cursor: pointer;
+		// background-color: green;
+	}
+}

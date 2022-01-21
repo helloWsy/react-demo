@@ -3,8 +3,8 @@ import React, { Suspense, Component } from 'react'
 import { connect } from 'react-redux'
 import { Router, Switch, Redirect, Route, withRouter } from 'react-router-dom'
 import history from './history'
- 
 import { getToken } from './utils/auth'
+import Navbar from './layout/components/Navbar'
 
 const routes = [
   {
@@ -15,7 +15,7 @@ const routes = [
       if (getToken()) {
         return <Redirect exact to="/home"></Redirect>
       }
-      // return <Redirect exact to="/login"></Redirect>
+      return <Redirect exact to="/login"></Redirect>
     }
   },
   {
@@ -24,7 +24,11 @@ const routes = [
   },
   {
     path: "/home",
-    component: React.lazy(() => import('./pages/home'))
+    component: Navbar,
+    children: [{
+      path: '/home/map',
+      component: React.lazy(() => import('./pages/home'))
+    }]
   },
   {
     path: '/404',

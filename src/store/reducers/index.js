@@ -3,8 +3,8 @@
 */
 import { combineReducers } from "redux"
 // Login的reducer
-import login from './login'
+import user from './user'
 
 export default combineReducers({
-  login
+  user
 })

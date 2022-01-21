@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { loginIn } from '../../redux/acitons/login'
+import { loginIn } from '../../store/actions/user'
 import { Form, Input, Button, Checkbox } from 'antd'
 import { Redirect } from 'react-router-dom'
 class Login extends Component {
 
   // login = () => {
   //   if (this.username.value && this.password.value) {
-  //     this.props.loginIn(this.username.value, this.password.value)
+  //     this.props.LOGIN_IN(this.username.value, this.password.value)
   //   } else {
   //     alert('请输入账号密码')
   //   }
@@ -18,12 +18,11 @@ class Login extends Component {
 	}
 	
 	onFinishFailed = (errorInfo) => {
-	//   console.log('Failed:', errorInfo)
+	  console.log('Failed:', errorInfo)
 	};
 
 	render() {
 	  const { token } = this.props
-	  console.log(token)
 	  if (!token) {
 	    return (
 	    //   <div>
