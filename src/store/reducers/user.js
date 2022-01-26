@@ -5,8 +5,6 @@ import * as auth from '@/utils/auth'
 const defaultState = fromJS({
   userInfo: auth.getUserInfo(),
   token: auth.getToken()
-  // userInfo: {},
-  // token: ''
 })
 
 export default function user(state = defaultState, { type, data }) {
