@@ -7,9 +7,9 @@ import history from '@/history'
 export const loginIn = (username, password) => {
   return dispatch => {
     login({ username, password }).then(res => {
-      if (res.code === 200) {
-        dispatch({ type: LOGIN_IN, data: res.data.principal })
-        dispatch({ type: TOKEN, data: res.data.token })
+      if (res.message === 'success') {
+        dispatch({ type: LOGIN_IN, data: res.user })
+        dispatch({ type: TOKEN, data: res.token })
         history.push('/home')
       }
     }).catch(() => {

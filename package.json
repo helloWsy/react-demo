@@ -12,6 +12,7 @@
     "global": "^4.4.0",
     "immutable": "^4.0.0",
     "js-cookie": "^3.0.1",
+    "ol": "6.5.0",
     "react": "^17.0.2",
     "react-app-rewired": "^2.1.11",
     "react-dom": "^17.0.2",

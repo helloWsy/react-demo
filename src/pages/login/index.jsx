@@ -41,7 +41,7 @@ class Login extends Component {
 	        wrapperCol={{ span: 16 }}
 	      >
 	        <Form.Item
-	          initialValue={'test'}
+	          initialValue={'admin'}
 	          label="Username"
 	          name="username"
 	          rules={[{ required: true, message: 'Please input your username!' }]}
@@ -51,7 +51,8 @@ class Login extends Component {
 	        </Form.Item>
 				
 	        <Form.Item
-	          initialValue={'91b70cc9632ac5ac7b3fe2a63373aa65'}
+	        //   initialValue={'91b70cc9632ac5ac7b3fe2a63373aa65'}
+	          initialValue={'123'}
 	          label="Password"
 	          name="password"
 	          rules={[{ required: true, message: 'Please input your password!' }]}

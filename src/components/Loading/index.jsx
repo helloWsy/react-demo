@@ -9,7 +9,7 @@ const Loading = () => {
   useEffect(() => {
     // NProgress.start()
     return () => {
-    //   NProgress.done()
+      // NProgress.done()
     }
   }, [])
 
