@@ -159,7 +159,7 @@ module.exports = {
     'guard-for-in': 0, // for in循环要用if语句过滤
     'handle-callback-err': 0, // nodejs 处理错误
     'id-length': 0, // 变量名长度
-    'indent': [1, 2, { // 缩进风格
+    'indent': [2, 2, { // 缩进风格
       'SwitchCase': 1
     }],
     'init-declarations': 0, // 声明时必须赋初值
@@ -214,7 +214,7 @@ module.exports = {
     'react/jsx-boolean-value': 2, //在JSX中强制布尔属性符号
     'react/jsx-closing-bracket-location': 1, //在JSX中验证右括号位置
     'react/jsx-curly-spacing': [2, { 'when': 'never', 'children': true }], //在JSX属性和表达式中加强或禁止大括号内的空格。
-    'react/jsx-indent-props': [0, 1], //验证JSX中的props缩进
+    'react/jsx-indent-props': [1, 2], //验证JSX中的props缩进
     'react/jsx-key': 2, //在数组或迭代器中验证JSX具有key属性
     'react/jsx-max-props-per-line': [0, { 'maximum': 1 }], // 限制JSX中单行上的props的最大数量
     'react/jsx-no-bind': 0, //JSX中不允许使用箭头函数和bind

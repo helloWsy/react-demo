@@ -21,7 +21,8 @@ export const loginIn = (username, password) => {
 export const loginOut = () => {
   return dispatch => {
     history.push('/login')
-    logout().then(() => {
+    logout().then((res) => {
+      console.log(res)
       dispatch({ type: LOGIN_OUT, data: null })
       history.push('/login')
     })

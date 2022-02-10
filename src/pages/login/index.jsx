@@ -46,8 +46,7 @@ class Login extends Component {
 	          name="username"
 	          rules={[{ required: true, message: 'Please input your username!' }]}
 	        >
-				
-		  		<Input />
+	          <Input />
 	        </Form.Item>
 				
 	        <Form.Item
@@ -57,7 +56,7 @@ class Login extends Component {
 	          name="password"
 	          rules={[{ required: true, message: 'Please input your password!' }]}
 	        >
-		  		<Input.Password />
+	          <Input.Password />
 	        </Form.Item>
 				
 	        <Form.Item
@@ -65,11 +64,11 @@ class Login extends Component {
 	          valuePropName="checked"
 	          wrapperCol={{ offset: 8, span: 16 }}
 	        >
-		  		<Checkbox>Remember me</Checkbox>
+	          <Checkbox>Remember me</Checkbox>
 	        </Form.Item>
 	        
 	        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-		  		<Button htmlType="submit" type="primary">Submit</Button>
+	          <Button htmlType="submit" type="primary">Submit</Button>
 	        </Form.Item>
 	      </Form>
 	    )
