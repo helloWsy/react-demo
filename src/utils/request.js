@@ -32,6 +32,7 @@ service.interceptors.response.use(
       return response
     }
 
+    console.log(response)
     if(response.data.status === 500 || response.data.code === 500) {
       message.error(res.msg)
       return Promise.reject(new Error(res.msg || 'Error'))
@@ -46,6 +47,7 @@ service.interceptors.response.use(
       history.replace('/login')
       return
     }
+    message.error(error.response.data.message)
     return Promise.reject(error)
   }
 )
